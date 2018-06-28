@@ -10,6 +10,9 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { BooksAsListComponent } from './components/books-as-list/books-as-list.component';
+import { BooksService } from './services/books.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,13 +24,15 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
     ContactsComponent,
     PageNotFoundComponent,
     BooksListComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    BooksAsListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
